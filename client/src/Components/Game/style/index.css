@@ -1,0 +1,67 @@
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+}
+
+/* .board-row:after {
+    clear: both;
+    content: "";
+    display: table;
+  } */
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #80CA67;
+  border: 2px solid #999;
+  float: left;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 60px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 60px;
+  cursor: pointer;
+}
+
+.square:hover {
+  background: #b8d0af;
+}
+
+.square-ava {
+  background: #b8d0af;
+  border: 2px solid #999;
+  /* border-radius: 3px; */
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 60px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 60px;
+  cursor: pointer;
+}
+
+.square-ava:focus {
+  outline: none;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
