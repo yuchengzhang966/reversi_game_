@@ -42,6 +42,9 @@
       "react-app/jest"
     ]
   },
+  "overrides": {
+    "postcss-safe-parser>postcss": "^8.4.47"
+  },
   "browserslist": {
     "production": [
       ">0.2%",

@@ -1,15 +1,10 @@
 import io from "socket.io-client";
 
-export const socket = io("https://api.reversi.pro", {
+// Use an environment variable for the backend URL, defaulting to localhost for development.
+const ENDPOINT = process.env.REACT_APP_BACKEND_URL || "http://localhost:8000";
+
+export const socket = io(ENDPOINT, {
   reconnection: true,
   reconnectionDelay: 500,
   reconnectionAttempts: 10,
 });
-
-// DEV
-// export const socket = io("http://localhost:8000", {
-//   reconnection: true,
-//   reconnectionDelay: 500,
-//   reconnectionAttempts: 10,
-// });
-

@@ -1,7 +1,6 @@
 import { readCookie } from "../utils/cookie";
 
-const BASE_URL = "https://api.reversi.pro";
-// const BASE_URL = "http://localhost:8000";
+const BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8000";
 const createAPI = (endpoint) => `${BASE_URL}${endpoint}`;
 
 // User

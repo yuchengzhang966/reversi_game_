@@ -36,7 +36,21 @@ RedisClient.on("error", function(error) {
 
 dotenv.config();
 
-app.use(cors())
+// CORS Configuration
+// This tells your backend which frontend domains are allowed to make requests.
+// We use an environment variable for the production URL to keep it flexible.
+const allowedOrigins = ['http://localhost:3000'];
+if (process.env.FRONTEND_URL) {
+  allowedOrigins.push(process.env.FRONTEND_URL);
+  // If your frontend gets a www subdomain, you might want to allow that too
+  allowedOrigins.push(process.env.FRONTEND_URL.replace('://', '://www.'));
+}
+
+const corsOptions = {
+  origin: allowedOrigins,
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 
 // Format the JSON Response
 app.use(express.json());
@@ -70,6 +84,7 @@ mongoose.set('useFindAndModify', false);
 
 
 // API Server Initialization
-server.listen("8000", () => {
-  log("Server Listened on 8000", "success");
+const PORT = process.env.PORT || 8000;
+server.listen(PORT, () => {
+  log(`Server listening on port ${PORT}`, "success");
 });
