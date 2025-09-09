@@ -122,7 +122,7 @@ export default function GamePlayPage() {
         <Grid item lg={3} md={2} sm={0}>
           &nbsp;
         </Grid>
-        <Grid item sm={12} sm={12} md={6} lg={6}>
+        <Grid item sm={12}  md={6} lg={6}>
           <Box
             display="flex"
             flexDirection="column"
